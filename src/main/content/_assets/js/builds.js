@@ -29,8 +29,17 @@ function render_builds(builds, parent) {
         var row = $('<tr></tr>');        
         
         if(parent.hasClass('release_table_body')) {
-            var version_column = $('<td><span class="table_date">' + build.version + '</span></td>');
+            var version_column = $('<td><span class="table_date">' + build.version + '</span></td>');            
             row.append(version_column);
+
+            var package_locations = build.package_locations;
+            for(var packageName in package_locations){
+                if(package_locations.hasOwnProperty(package)){
+                    var package_column = $('<td><a href="' +  package_locations[packageName] +'" target="new" class="'
+                    + analytics_class_name + ' skip_outbound_link_analytics">' + packageName + '</a></td>');
+                    row.append(package_column);
+                }
+            }
         } else {
             var date = new Date(build.date);
             var year = date.getFullYear();
