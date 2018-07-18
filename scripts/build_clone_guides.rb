@@ -26,15 +26,28 @@ repos = client.org_repos('OpenLiberty')
 # --------------------------------------------
 # For the interactive guides, only build the dev branch for the TravisCI environments
 guide_branch = 'master'
-if ENV['TRAVIS']
+# if ENV['TRAVIS']
     guide_branch = 'multipane'
     guide_camelcase_branch = 'multiPane'
-end
+# end
 puts "Looking for draft interactive guides with branch: #{guide_branch}..."
 
 # Function to check if the guide directory exists after a git clone command
 def directory_exists?(repo_name)
     File.directory?('src/main/content/guides/' + repo_name)
+end
+
+# Check if repo exists on Github before cloning
+def repo_exists?(client, repo_name, branch_name)
+    puts "openliberty/#{repo_name}"
+    puts "branch name: #{branch_name}"
+    begin
+        puts "cloning guide"
+        return client.branch("https://github.com/OpenLiberty/#{repo_name}", branch_name).error_for_404()
+    rescue
+        puts "guide branch not found"
+        return false
+    end
 end
 
 # --------------------------------------------
@@ -49,15 +62,13 @@ repos.each do |element|
         # Clone guides that are still being drafted and are only for the staging website
         if repo_name.start_with?('draft-iguide') || repo_name.start_with?('draft-guide')
             # Clone the draft guides, using the multipane/multiPane branch for travis and master for all other environments.
-            `git clone https://github.com/OpenLiberty/#{repo_name}.git --branch #{guide_branch} --single-branch src/main/content/guides/#{repo_name}`
-
+            if repo_exists?(client, repo_name, guide_branch)
+                `git clone https://github.com/OpenLiberty/#{repo_name}.git --branch #{guide_branch} --single-branch src/main/content/guides/#{repo_name}`     
             # Clone the draft guide using multiPane because git clone is case sensitive
-            if !(directory_exists?(repo_name))
-                `git clone https://github.com/OpenLiberty/#{repo_name}.git --branch #{guide_camelcase_branch} --single-branch src/main/content/guides/#{repo_name}`
-            end
-
+            elsif repo_exists?(client, repo_name, guide_camelcase_branch)
+                `git clone https://github.com/OpenLiberty/#{repo_name}.git --branch #{guide_camelcase_branch} --single-branch src/main/content/guides/#{repo_name}`            
             # Clone the default branch if the guide_branch or guide_camelcase_branch does not exist for this guide repo.
-            if !(directory_exists?(repo_name))
+            else
                 `git clone https://github.com/OpenLiberty/#{repo_name}.git src/main/content/guides/#{repo_name}`
             end
         end
@@ -66,18 +77,19 @@ repos.each do |element|
         # PUBLISHED GUIDES
         # Clone interactive guides that are ready to be published to openliberty.io
         if repo_name.start_with?('iguide') || repo_name.start_with?('guide')
-            # Clone the  guides, using the multipane/multiPane branch for travis and master for all other environments.
-            `git clone https://github.com/OpenLiberty/#{repo_name}.git --branch #{guide_branch} --single-branch src/main/content/guides/#{repo_name}`
-
+            # Clone the guides, using the multipane/multiPane branch for travis and master for all other environments.
+            if (repo_exists?(client, repo_name, guide_branch))
+                puts  "cloning using multipane"
+                `git clone https://github.com/OpenLiberty/#{repo_name}.git --branch #{guide_branch} --single-branch src/main/content/guides/#{repo_name}`
              # Clone the draft guide using multiPane because git clone is case sensitive
-             if !(directory_exists?(repo_name))
+            elsif (repo_exists?(client, repo_name, guide_camelcase_branch))
+                puts  "cloning using multiPane"
                 `git clone https://github.com/OpenLiberty/#{repo_name}.git --branch #{guide_camelcase_branch} --single-branch src/main/content/guides/#{repo_name}`
-             end
-
             # Clone the default branch if the guide_branch or guide_camelcase_branch does not exist for this guide repo.
-            if !(directory_exists?(repo_name))
+            else
+                puts  "cloning using master"
                 `git clone https://github.com/OpenLiberty/#{repo_name}.git src/main/content/guides/#{repo_name}`
-            end            
+            end
         end
     end
 end
