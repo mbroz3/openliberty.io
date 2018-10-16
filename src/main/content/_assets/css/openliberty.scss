@@ -491,11 +491,11 @@ a {
             transition: color .2s;
 
             &:hover {
-                color: white;
+                color: #C9D6FE;
             }
 
             &:focus {
-                color: white;
+                color: #C9D6FE;
                 outline: none;
             }
         }
@@ -515,21 +515,21 @@ a {
 
         & button{
             &:focus {
-                color: white;
+                color: #5E6B8D;
             }
         }
     }
 
     & .btn-default:active:hover, & .btn-default:active:focus {
         background-color: inherit;
-        color: white;
+        color: #5E6B8D;
     }
 
     /* Bootstrap open dropdown class */
     & .open .dropdown-toggle {
         &.btn-default, &:active, &:hover, &:focus {
             background-color: inherit;
-            color: white;
+            color: #5E6B8D;
             outline: none;
             box-shadow: none;
         }        
@@ -546,7 +546,7 @@ a {
         padding-right: 18px;
 
         &:hover {
-            color: white;
+            color: #5E6B8D;
         }
     }    
 
@@ -581,7 +581,7 @@ a {
 
         &.open {
             position: absolute;
-            background-color: #5E6B8D;
+            background-color: white;
             width: 63%;
             margin-right: 0;
 
@@ -645,6 +645,7 @@ a {
                 padding: 0;
                 margin-left: -14px;
                 margin-right: 18px;
+                color: #5E6B8D;
 
                 @media screen and (max-width: 767px){
                     margin-left: 0;
@@ -700,7 +701,7 @@ a {
         }
         
         #navbar_responsive_button:hover .icon-bar {
-            background-color: white !important;
+            background-color: #5E6B8D !important;
         }
         
         #navbar_responsive_button:hover {
@@ -709,7 +710,7 @@ a {
 
         .dropdown_container {
             display: block;
-            color: white;
+            color: #5E6B8D;
             margin-top: 0;
             margin-left: 0;
 
@@ -721,7 +722,7 @@ a {
         & .dropdown {
             float: none;
             font-size: 20px;
-            color: white;
+            color: #5E6B8D;
         }
 
         & .dropdown-toggle {
@@ -746,7 +747,7 @@ a {
 
                 & > a {
                     font-size: 20px;
-                    color: white;
+                    color: #5E6B8D;
                 }
 
                 & button {
@@ -767,7 +768,7 @@ a {
                 
                 /* Override default color with the same specificity */
                 .navbar-default .navbar-nav > li > a {
-                    color: white;
+                    color: #5E6B8D;
                 }
             }
         }
@@ -781,20 +782,20 @@ a {
             }
             & .dropdown-menu {
                 & li > a {
-                    color: white;
+                    color: #5E6B8D;
                     padding-left: 21px;
                     font-size: 20px;
                 }
     
                 & li > a:hover, & li > a:focus {
-                    color: white;
+                    color: #5E6B8D;
                 }
             }                      
         }
 
         #mobile_links_section {
             display: block;
-            background-color: #525D7A;
+            background-color: rgba(200, 210, 210, .16);
             margin-left: -15px;
             margin-right: -45px;
             padding-top: 24px;
@@ -813,7 +814,7 @@ a {
                     margin-bottom: 24px;
 
                     & > a {
-                        color: #C9D6FE;
+                        color: #5E6B8D;
                         font-size: 16px;
 
                         &:hover, &:focus {
@@ -824,7 +825,7 @@ a {
             }
 
             #copyright_section {
-                color: #C8D2D2;
+                color: #3F4659;
                 position: absolute;
                 bottom: 0;
             }

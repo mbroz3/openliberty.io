@@ -53,10 +53,10 @@ $(document).ready(function(){
 
         var newSVG = $('<img></img>');
         if(open){
-            newSVG.attr('src','/img/UpCaretWhite.svg');
+            newSVG.attr('src','/img/UpCaretBlue.svg');
             newSVG.attr('alt','Close nav menu');               
         } else{
-            newSVG.attr('src','/img/DownCaretWhite.svg');    
+            newSVG.attr('src','/img/DownCaretBlue.svg');    
             newSVG.attr('alt','Open nav menu');
         }        
         dropdownMenu.find('.mobile_caret').append(newSVG);
