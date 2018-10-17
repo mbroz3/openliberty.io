@@ -7,13 +7,13 @@ css: home
 
 <!-- INTRO -->
 <div id="intro_background">
-    <div id="right_blue_background"></div>
+    <!-- <div id="right_blue_background"></div> -->
     <div id="intro_background_image">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-md-12">
                     <div id="intro_content" class="floating_nav_point">
-                        <img id="intro_logo" src="{{ "/img/logo.svg" | relative }}" class="img-responsive" alt="Open Liberty: An IBM open source project">
+                        <img id="intro_logo" src="{{ "/img/logo.svg" | relative }}" class="img-responsive" alt="Open Liberty: An IBM open source project">   
                         <div id="an_ibm_open_source_project">An IBM Open Source Project</div>
                         <h3 id="intro_lighten_up_title">Jump on board and work at lightspeed</h3>
                         <p id="intro_paragraph">
@@ -25,9 +25,25 @@ css: home
                         </div>
                     </div>
                 </div>
+                <div id="action_cards_container" class="col-md-12">
+                        <div class="action_card">
+                            <p class="action_title">Light</p> 
+                            <p class="action_description">Open Liberty's modular runtime makes it ideal for building microservices and deploying into cloud environments.</p>
+                        </div>
+                        <div class="action_card">
+                            <p class="action_title">Open</p> 
+                            <p class="action_description">We opened up Liberty because we believe that being transparent is the best way to enable developers to create their best work.</p>
+                        </div>
+                        <div class="action_card">
+                            <p class="action_title">Fast</p> 
+                            <p class="action_description">With Open Liberty, you can rapidly prototype and test your code without restarting the server.</p>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
+    <img id="ufo_1" src="/img/ufo_1.png" alt="">
+    <img id="ufo_light" src="/img/ufo_light.png" alt="UFO Light">
     <img id="shooting_star_1" class="hidden-xs" src="{{ "/img/star.png" | relative }}" alt="">
     <img id="star1" class="star hidden-xs" src="{{ "/img/stars1.png" | relative }}" alt="">
     <img id="star2" class="star hidden-xs" src="{{ "/img/stars2.png" | relative }}" alt="">
@@ -42,14 +58,14 @@ css: home
 <div id="quick_start_background">
     <div class="container">
         <div id="quick_start_row" class="row">
-            <div class="col-md-4 col-sm-12">
+            <div class="text-center">
                 <h2 id="quick_start_title">Launch a sample app</h2>
                 <p id="quick_start_paragraph">
                     Open Liberty is fast and composable, but don’t 
                     take our word for it - try it out!
                 </p>
             </div>
-            <div class="col-md-8 col-sm-12">
+            <div>
                 <div id="code_container" class="text-left center-block">
                     git clone https://github.com/OpenLiberty/sample-getting-started.git
                     <br>
@@ -65,7 +81,7 @@ css: home
 
         <div id="guides_container" class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-4">
                     <h2 id="guides_title">Set course for the Open Liberty guides</h2>
                     <p id="guides_description">
                         Your sample app looks great - but what next? 
@@ -78,8 +94,8 @@ css: home
                         <a id="guides_link" href="/guides">View all Open Liberty guides</a>
                     </div>                    
                 </div>
-                <div class="col-md-4">
-                    <img id="guides_ufo" src="{{ "/img/homepage_ufo.png" | relative }}" class="img-responsive center-block" alt="Two UFOs working together to adjust the ring of a planet">
+                <div class="col-md-8">
+                    <img id="guides_image" src="{{ "/img/2pane-1280.png" | relative }}" class="img-responsive center-block" alt="Open Liberty guide">
                 </div>
             </div>
         </div>        
