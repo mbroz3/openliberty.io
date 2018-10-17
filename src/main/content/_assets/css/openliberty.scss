@@ -439,7 +439,7 @@ a {
 
         &.stickyNav {
             position: fixed;
-            background: #24253A;
+            background: white;
             padding-top: 12.5px;
             padding-bottom: 12.5px;
             
@@ -447,10 +447,10 @@ a {
             animation-duration: 500ms;
             animation-timing-function: ease;
 
-            & .dropdown-menu {
-                /* Enable full opacity when the navbar is floating */
-                background-color: rgba(44, 46, 80, 1.00);
-            }
+            // & .dropdown-menu {
+            //     /* Enable full opacity when the navbar is floating */
+            //     background-color: white;
+            // }
         }
     }       
 
@@ -487,15 +487,17 @@ a {
         font-size: 16px;
 
         & > a {
-            color: #C9D6FE;
+            color: #5E6B8D;
             transition: color .2s;
 
             &:hover {
-                color: #C9D6FE;
+                color: #3F4659;
+                font-weight: 500;
             }
 
             &:focus {
-                color: #C9D6FE;
+                color: #3F4659;
+                font-weight: 500;
                 outline: none;
             }
         }
@@ -537,7 +539,7 @@ a {
 
     & .dropdown {
         font-size: 14px;
-        color: #C9D6FE;
+        color: #5E6B8D;
         letter-spacing: 0;
         text-align: center;
         border: none;
@@ -546,14 +548,13 @@ a {
         padding-right: 18px;
 
         &:hover {
-            color: #5E6B8D;
+            color: #3F4659;
+            font-weight: 500;
         }
     }    
 
-    & .dropdown-menu {
+    & .navbar-nav > li > .dropdown-menu {
         margin-top: 0;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
         background-color: white;
         border-radius: 4px;
         float: none;
