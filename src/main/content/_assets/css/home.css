@@ -13,15 +13,7 @@
 
 #intro_background {
     background-color: white;
-    height: 1000px;
-}
-
-#right_blue_background {
-    background-image: radial-gradient(119% 31%, #5E6B8D 0%, #2C2E50 70%);
-    height: 100%;
-    position: absolute;
-    right: 0;
-    width: 520px;
+    height: 1471px;
 }
 
 #intro_background_image {
@@ -85,16 +77,18 @@
 }
 
 #action_cards_container {
-    margin-top: 100px;
+    position: absolute;
+    /* top: 600px; */
+    top: 750px;
 }
 
 .action_card {
     display: inline-block;
+    vertical-align: top;
     border-radius: 3px;
     width: 359px;
     height: 201px;
     margin-right: 42px;
-    margin: auto;
 }
 
 .action_title {
@@ -110,7 +104,7 @@
     position: absolute;
     font-size: 14px;
     top: 87px;
-    right: calc(50% - 185px);
+    left: 285px;
 }
 
 #shooting_star_1 {
@@ -120,17 +114,54 @@
     animation: shooting_star_1_fly_lg 20s infinite;
 }
 
+#right_blue_background {
+    position: absolute;
+    right: 0;
+    width: 670px;
+}
+
 #ufo_light {
     position: absolute;
-    top: 198px;
-    right: 341px;
+    top: 224px;
+    right: 510px;
+    width: 1121px;
+    height: 1285px;
 }
 
 #ufo_1 {
     position: absolute;
-    top: 82px;
-    right: 341px;
     transform: rotate(-5deg);
+    top: 82px;
+    right: 341px;    
+    width: 461px;
+    height: 247px;
+}
+
+#top_woman {
+    position: absolute;
+    transform: rotate(3deg);
+    top: 309px;
+    right: 479px;
+    height: 289px;
+    width: 370px;
+}
+
+#lost_shoe {
+    position: absolute;
+    transform: rotate(3deg);
+    top: 463px;
+    right: 799px;
+    height: 60px;
+    width: 103px;
+}
+
+#bearded_dude {
+    position: absolute;
+    transform: rotate(3deg);
+    top: 552px;
+    right: 721px;
+    height: 518px;
+    width: 312px;
 }
 
 @keyframes shooting_star_1_fly_lg {
@@ -432,8 +463,24 @@
     line-height: 60px;
 }
 
-#sample_app_browser_link{
-    color: white;
+#sample_app_browser_link {
+    font-size: 16px;
+    color: #151629;
+    margin-top: 68px;
+}
+
+#sample_app_button {
+    color: #1A1B31;
+    background-color: #ABD155;
+    border-radius: 3px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 8px;
+    text-align: center;
+    transition: background-color .2s;    
+    min-width: 280px;
 }
 
 @media (max-width: 767px) {

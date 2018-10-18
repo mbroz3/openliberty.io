@@ -7,7 +7,6 @@ css: home
 
 <!-- INTRO -->
 <div id="intro_background">
-    <!-- <div id="right_blue_background"></div> -->
     <div id="intro_background_image">
         <div class="container">
             <div class="row">
@@ -42,8 +41,21 @@ css: home
             </div>
         </div>
     </div>
+    <img id="right_blue_background" src="/img/home/Blue_BG.png" alt="">
     <img id="ufo_1" src="/img/ufo_1.png" alt="">
     <img id="ufo_light" src="/img/ufo_light.png" alt="UFO Light">
+    <img id="bearded_dude" src="/img/home/beardDude.svg" alt="">
+    <img id="ball" src="/img/home/ball.svg" alt="">
+    <img id="bottom_person" src="/img/home/bottomPerson.svg" alt="">
+    <img id="coffee_cup" src="/img/home/coffeecup.svg" alt="">
+    <img id="dog" src="/img/home/dog.svg" alt="">
+    <img id="laptop" src="/img/home/laptop.svg" alt="">
+    <img id="lost_shoe" src="/img/home/lost_shoe.svg" alt="">
+    <img id="mouse" src="/img/home/mouse.svg" alt="">
+    <img id="phone" src="/img/home/phone.svg" alt="">
+    <img id="top_woman" src="/img/home/topWoman.svg" alt="">
+
+
     <img id="shooting_star_1" class="hidden-xs" src="{{ "/img/star.png" | relative }}" alt="">
     <img id="star1" class="star hidden-xs" src="{{ "/img/stars1.png" | relative }}" alt="">
     <img id="star2" class="star hidden-xs" src="{{ "/img/stars2.png" | relative }}" alt="">
@@ -71,11 +83,9 @@ css: home
                     <br>
                     cd sample-getting-started
                     <br>
-                    mvn clean package liberty:run-server
-                    <br>
-                    <br>
-                    <span id="sample_app_browser_link">Open browser to: <a class="light_green_link_light_background" target="new" href="http://localhost:9080">http://localhost:9080</a></span>
+                    mvn clean package liberty:run-server                
                 </div>
+                <div id="sample_app_browser_link" class="text-center">Open browser to: <a id="sample_app_button" class="light_green_link_light_background" target="new" href="http://localhost:9080">http://localhost:9080</a></div>
             </div>
         </div>
 
