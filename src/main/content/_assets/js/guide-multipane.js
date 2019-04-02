@@ -358,15 +358,15 @@ function restoreCodeColumn(){
 */
 function hideComments(code_block){
     // Hide comments
-    // code_block.find('.comment').prev('.line-numbers').remove();
-    // code_block.find('.comment').remove();
-
-    code_block.find('.comment').prev('.line-numbers').each(function(){
-        $(this).html($(this).html().trim());
-    }).remove();
+    code_block.find('.comment').prev('.line-numbers').remove();
     code_block.find('.comment').each(function(){
         $(this).html($(this).html().trim());
-    }).remove();    
+    }).remove();
+
+    // code_block.find('.comment').prev('.line-numbers').css('background-color', 'magenta');    
+    // code_block.find('.comment').each(function(){
+    //     $(this).html($(this).html().trim());
+    // }).css('background-color', 'cyan');
 
     // Hide the copyright
     var start = code_block.find("span:contains('<!-- Copyright')");
